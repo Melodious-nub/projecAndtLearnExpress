@@ -7,8 +7,9 @@ const port = 3000
 // this is a for joining public folder into express
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/hello', (req, res) => {
-  res.send('Hello express!')
+// pass route params
+app.get('/hello/:name', (req, res) => {
+  res.send('Hello express!'+ req.params.name)
 })
 
 app.get('/temp', (req, res) => {
